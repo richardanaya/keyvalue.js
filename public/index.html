@@ -19,9 +19,33 @@
     </fieldset>
     <br>
 <div id="log"></div>
+
+    <pre id="quickStart" style="text-align: left; width: 450px;"></pre>
 </center>
 </body>
 <script>
+
+    var code = '&lt;script src="'+location.origin+'/kvp.js"&gt;&lt;script&gt;\n\n'+
+    'kvp.server = "'+location.origin+'";\n'+
+    '\n'+
+    'kvp.get("foo",\n'+
+    '   function(val){\n'+
+    '\n'+
+    '   }\n'+
+    ');\n'+
+    '\n'+
+    'kvp.set("foo","bar",\n'+
+    '   function(){\n'+
+    '\n'+
+    '   }\n'+
+    ');\n'+
+    '\n'+
+    'kvp.delete("foo",\n'+
+    '   function(){\n'+
+    '\n'+
+    '   }\n'+
+    ');"\n';
+    $('#quickStart').append(code);
 
     var log = function(s){
         $('#log').append(s+"<br/>");
