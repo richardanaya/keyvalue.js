@@ -17,7 +17,7 @@ Planned Features:
 Setup:
 ----
 
-First, download the (heroku toolbelt)[https://toolbelt.heroku.com/].
+First, download the [heroku toolbelt](https://toolbelt.heroku.com/).
 
 ```Bash
 git clone https://github.com/richardanaya/keyvalue.js.git
