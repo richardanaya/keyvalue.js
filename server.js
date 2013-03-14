@@ -2,7 +2,8 @@ var express = require('express');
 
 var settings = {
     //this will make your name value pairs publically accessable to the world
-    useCORS: true
+    useCORS: true,
+    inMemory: true //TODO support false for database
 }
 
 var authorize = function(token){
