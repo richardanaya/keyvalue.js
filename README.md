@@ -35,6 +35,8 @@ heroku ps:scale web=1
 heroku open
 ```
 
+This last command should open you to a page you can test the key value store and some quick code to copy and paste and get started
+
 Using The Server:
 ---
 
@@ -45,24 +47,24 @@ Using The Server:
 ```Javascript
 //if your server isn't the same origin 
 //(i.e. your not running the key value server on same machine as your site)
-kvp.server = "http://secret-server.herokuapp.com/"
+kvp.server = "http://secret-server.herokuapp.com";
 
 kvp.get("foo",
-    function(val){
+   function(val){
 
-    }
+   }
 );
 
-kvp.set("foo","bar"
-    function(){
+kvp.set("foo","bar",
+   function(){
 
-    }
+   }
 );
 
-kvp.delete("foo"
-    function(){
+kvp.delete("foo",
+   function(){
 
-    }
+   }
 );
 ```
 
