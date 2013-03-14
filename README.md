@@ -87,6 +87,16 @@ kvp.authorization = "SOME_MAGIC_STRING_YOU_WANT_TO_AUTHORIZE"
 
 It's passed as a header so don't go too crazy
 
+One more thing:
+---
+
+uuid/guids are great things when it comes to random storage on the web, i've included
+
+```Javascript
+kvp.uuid();
+kvp.guid();
+```
+
 Important Notes:
 ---
 * The key value store is currently in memory only. I'd appreciate any help on different backend support.
