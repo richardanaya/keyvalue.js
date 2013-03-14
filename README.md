@@ -33,6 +33,36 @@ heroku ps:scale web=1
 heroku open
 ```
 
+Using The Server:
+---
+
+```HTML
+<script src="http://secret-server.herokuapp.com/kvp.js"></script>
+```
+
+```Javascript
+//if your server isn't the same origin (i.e. your not running the key value server on same machine as your site)
+kvp.server = "http://secret-server.herokuapp.com/"
+
+kvp.get("foo",
+    function(val){
+
+    }
+);
+
+kvp.set("foo","bar"
+    function(){
+
+    }
+);
+
+kvp.delete("foo"
+    function(){
+
+    }
+);
+```
+
 Important Notes:
 ---
 * The key value store is currently in memory only. I'd appreciate any help on different backend support.
