@@ -21,12 +21,14 @@ First, download the [heroku toolbelt](https://toolbelt.heroku.com/).
 
 ```Bash
 git clone https://github.com/richardanaya/keyvalue.js.git
+cd keyvalue.js
 ```
 
-Look inside server.js at the top, there is a settings block.  Please choose the appropriate settings for your use.
+Look inside server.js at the top, there is a settings block.  Please choose the appropriate settings for your use.  If you don't have anything special, move on but remember:
+* CORS is enabled by default (i.e. anyone in the world can use your key value server)
+* There is no authorization by default
 
 ```Bash
-cd keyvalue.js
 heroku create
 git push heroku master
 heroku ps:scale web=1
@@ -66,4 +68,4 @@ kvp.delete("foo"
 Important Notes:
 ---
 * The key value store is currently in memory only. I'd appreciate any help on different backend support.
-* The key value store currently CORS enabled by default (i.e. anyone in the world can use you for key value server). Be sure this is what you want.
+* The key value store currently CORS enabled by default (i.e. anyone in the world can use your key value server). Be sure this is what you want.
