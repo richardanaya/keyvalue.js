@@ -47,25 +47,25 @@ Using The Server:
 ```Javascript
 //if your server isn't the same origin 
 //(i.e. your not running the key value server on same machine as your site)
-kvp.server = "http://secret-server.herokuapp.com/"
+kvp.server = "http://secret-server.herokuapp.com";
 
 kvp.get("foo",
-    function(val){
+   function(val){
 
-    }
+   }
 );
 
-kvp.set("foo","bar"
-    function(){
+kvp.set("foo","bar",
+   function(){
 
-    }
+   }
 );
 
-kvp.delete("foo"
-    function(){
+kvp.delete("foo",
+   function(){
 
-    }
-);
+   }
+);"
 ```
 
 Authorization:
