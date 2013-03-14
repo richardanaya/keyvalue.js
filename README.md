@@ -35,6 +35,8 @@ heroku ps:scale web=1
 heroku open
 ```
 
+This last command should open you to a page you can test the key value store and some quick code to copy and paste and get started
+
 Using The Server:
 ---
 
