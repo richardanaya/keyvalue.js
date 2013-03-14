@@ -43,7 +43,8 @@ Using The Server:
 ```
 
 ```Javascript
-//if your server isn't the same origin (i.e. your not running the key value server on same machine as your site)
+//if your server isn't the same origin 
+//(i.e. your not running the key value server on same machine as your site)
 kvp.server = "http://secret-server.herokuapp.com/"
 
 kvp.get("foo",
@@ -64,6 +65,25 @@ kvp.delete("foo"
     }
 );
 ```
+
+Authorization:
+---
+
+In server.js there is a special function at the top named
+
+```Javascript
+var authorization = function(token){
+    return true;
+}
+```
+
+By default it just returns true, but you can use whatever logic you want based off a token that is passed from the client simply by:
+
+```Javascript
+kvp.authorization = "SOME_MAGIC_STRING_YOU_WANT_TO_AUTHORIZE"
+```
+
+It's passed as a header so don't go too crazy
 
 Important Notes:
 ---
