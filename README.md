@@ -65,7 +65,7 @@ kvp.delete("foo",
    function(){
 
    }
-);"
+);
 ```
 
 Authorization:
