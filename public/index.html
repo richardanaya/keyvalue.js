@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="kvp.js"></script>
+    <title>KeyValue.js Tester</title>
+</head>
+<body>
+<center>
+    <fieldset>
+        <legend>KeyValue.js Tester</legend>
+        <input type="text" id="kvpKey" placeholder="key"></input>
+        <br>
+        <textarea id="kvpValue"></textarea><br>
+        <button id="buttonGet" class="btn">Get</button>
+        <button id="buttonSet" class="btn">Set</button>
+        <button id="buttonDelete" class="btn">Delete</button>
+    </fieldset>
+    <br>
+<div id="log"></div>
+</center>
+</body>
+<script>
+
+    var log = function(s){
+        $('#log').append(s+"<br/>");
+    }
+
+    $('#buttonGet').click(function(){
+        var key = $('#kvpKey').val();
+        kvp.get(key,
+            function(data){
+                $('#kvpValue').val(data);
+                log("key "+key+" retrieved");
+            },
+            function(msg){
+                log("key "+key+" retreival failed: "+msg);
+            }
+        );
+    });
+    $('#buttonSet').click(function(){
+        var key = $('#kvpKey').val();
+        var value = $('#kvpValue').val();
+        kvp.set(key, value,
+                function(){
+                    log("key "+key+" assignment");
+                },
+                function(msg){
+                    log("key "+key+" assignment failed: "+msg);
+                }
+        );
+    });
+    $('#buttonDelete').click(function(){
+        var key = $('#kvpKey').val();
+        kvp.delete(key,
+                function(){
+                    $('#kvpKey').val('');
+                    $('#kvpValue').val('');
+                    log("key "+key+" deleted");
+                },
+                function(msg){
+                    log("key "+key+" deletion failed: "+msg);
+                }
+        );
+    });
+</script>
+</html>
